@@ -36,16 +36,16 @@ Para empezar, debemos nos encontraremos con el menu:
 ````
 ========================================
 
-     Choose a search method
+     Escoge método de búsqueda
 
 ========================================
 
-1) Deep-First Search
-2) Breadth-First Search
-3) Greedy Best-First Search
-4) Exit
+1) Búsqueda en Profundidad
+2) Buscar en Anchura
+3) Buscar Mejor Primero
+4) Salir
 
-Choose an option:
+Ingrese su opción: 
 ````
 
 Tenemos 4 opciones dentro del menu, las cuales serán explicadas, partiendo desde el Deep-First Search o Búsqueda en Profundidad:
@@ -53,117 +53,117 @@ Tenemos 4 opciones dentro del menu, las cuales serán explicadas, partiendo desd
 ````
 ========================================
 
-     Choose a search method
+     Escoge método de búsqueda
 
 ========================================
 
-1) Deep-First Search
-2) Breadth-First Search
-3) Greedy Best-First Search
-4) Exit
+1) Búsqueda en Profundidad
+2) Buscar en Anchura
+3) Buscar Mejor Primero
+4) Salir
 
-Choose an option: 1
+Ingrese su opción: 1
 
-Original State:
+Estado Original:
 
 x 2 8 
 1 3 4 
 6 5 7 
 
-Puzzle solved!
-Iterations: 119550
+¡Solución encontrada!
+Iteraciones: 119550
 
-Step 14:
+Paso 14:
 
 x 1 2 
 3 4 5 
 6 7 8 
 
-Step 13:
+Paso 13:
 
 1 x 2 
 3 4 5 
 6 7 8 
 
-Step 12:
+Paso 12:
 
 1 4 2 
 3 x 5 
 6 7 8 
 
-Step 11:
+Paso 11:
 
 1 4 2 
 3 5 x 
 6 7 8 
 
-Step 10:
+Paso 10:
 
 1 4 2 
 3 5 8 
 6 7 x 
 
-Step 9:
+Paso 9:
 
 1 4 2 
 3 5 8 
 6 x 7 
 
-Step 8:
+Paso 8:
 
 1 4 2 
 3 x 8 
 6 5 7 
 
-Step 7:
+Paso 7:
 
 1 x 2 
 3 4 8 
 6 5 7 
 
-Step 6:
+Paso 6:
 
 1 2 x 
 3 4 8 
 6 5 7 
 
-Step 5:
+Paso 5:
 
 1 2 8 
 3 4 x 
 6 5 7 
 
-Step 4:
+Paso 4:
 
 1 2 8 
 3 x 4 
 6 5 7 
 
-Step 3:
+Paso 3:
 
 1 2 8 
 x 3 4 
 6 5 7 
 
-Step 2:
+Paso 2:
 
 1 2 8 
 6 3 4 
 x 5 7 
 
-Step 1:
+Paso 1:
 
 1 2 8 
 x 3 4 
 6 5 7 
 
-Initial State:
+Estado Inicial:
 
 x 2 8 
 1 3 4 
 6 5 7 
 
-Press Enter to continue . . .
+Presione Enter para continuar . . .
 
 ````
 
@@ -172,104 +172,105 @@ Como puede ver, el programa entrega la solución de nuestro puzzle en 14 pasos o
 ````
 ========================================
 
-     Choose a search method
+     Escoge método de búsqueda
 
 ========================================
 
-1) Deep-First Search
-2) Breadth-First Search
-3) Greedy Best-First Search
-4) Exit
+1) Búsqueda en Profundidad
+2) Buscar en Anchura
+3) Buscar Mejor Primero
+4) Salir
 
-Choose an option: 2
-Initial State:
+Ingrese su opción: 2
+Estado Inicial:
 
 x 2 8 
 1 3 4 
 6 5 7 
 
-Puzzle solved!
-Iterations: 221143
+¡Solución encontrada!
+Iteraciones: 221143
 
-Step 12:
+Paso 12:
 
 x 1 2 
 3 4 5 
 6 7 8 
 
-Step 11:
+Paso 11:
 
 1 x 2 
 3 4 5 
 6 7 8 
 
-Step 10:
+Paso 10:
 
 1 4 2 
 3 x 5 
 6 7 8 
 
-Step 9:
+Paso 9:
 
 1 4 2 
 3 5 x 
 6 7 8 
 
-Step 8:
+Paso 8:
 
 1 4 2 
 3 5 8 
 6 7 x 
 
-Step 7:
+Paso 7:
 
 1 4 2 
 3 5 8 
 6 x 7 
 
-Step 6:
+Paso 6:
 
 1 4 2 
 3 x 8 
 6 5 7 
 
-Step 5:
+Paso 5:
 
 1 x 2 
 3 4 8 
 6 5 7 
 
-Step 4:
+Paso 4:
 
 1 2 x 
 3 4 8 
 6 5 7 
 
-Step 3:
+Paso 3:
 
 1 2 8 
 3 4 x 
 6 5 7 
 
-Step 2:
+Paso 2:
 
 1 2 8 
 3 x 4 
 6 5 7 
 
-Step 1:
+Paso 1:
 
 1 2 8 
 x 3 4 
 6 5 7 
 
-Initial State:
+Estado Inicial:
 
 x 2 8 
 1 3 4 
 6 5 7 
 
-Press Enter to continue . . .
+Presione Enter para continuar . . .
+
 ````
 
 Como pueden ver, a comparación del DFS, el Breadth-First Search toma más tiempo debido a la necesidad de usar más memoria para ciertas operaciones. 
@@ -279,18 +280,19 @@ Para finalizar, tenemos la opción de Greedy Best-First Search que actualmente n
 ````
 ========================================
 
-     Choose a search method
+     Escoge método de búsqueda
 
 ========================================
 
-1) Deep-First Search
-2) Breadth-First Search
-3) Greedy Best-First Search
-4) Exit
+1) Búsqueda en Profundidad
+2) Buscar en Anchura
+3) Buscar Mejor Primero
+4) Salir
 
-Choose an option: 4
+Ingrese su opción: 4
 Saliendo del programa...
-Press Enter to continue . . .
+Presione Enter para continuar . . .
+
 
 ````
 
