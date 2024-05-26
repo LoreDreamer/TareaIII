@@ -6,7 +6,7 @@ Este sistema permite buscar de dos formas distintas la solución a un puzzle 8. 
 
 ### COMO USAR
 
-Para poder usar el sistema, usted debe hacer uso del Fork & Run a su derecha en la pantalla. Tras hacer eso, debe hacer uso del siguiente comando para poder hacer uso del buscador de películas.
+Para poder usar el sistema, entre al link asocidado el GitHub en la parte superior derecha. Tras haber entrado a la página de Replit, debe hacer uso del Fork & Run a su derecha en la pantalla. Tras hacer eso, debe hacer uso del siguiente comando para poder hacer uso del buscador de películas.
 
 ````
 ./tarea3
