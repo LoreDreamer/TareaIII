@@ -158,36 +158,36 @@ State* transition(State* oldState, int action) { // Función para realizar una t
     
 }
 
-List *getAdjNodes(Node* parentNode) { // Función para obtener los nodos adyacentes al nodo padre
+List *getAdjNodes(Node* parentNode) { // Función para obtener los nodos adyacentes al nodo padre.
 
     List *adjList = list_create();
 
     int x = parentNode->state.x;
     int y = parentNode->state.y;
 
-    for (int i = 1; i <= 4; i++) { // Iterar a través de los cuatro movimientos posibles
+    for (int i = 1; i <= 4; i++) { // Iterar a través de los cuatro movimientos posibles.
 
-        State *newState = transition(&parentNode->state, i); // Crear un nuevo estado con el movimiento actual
+        State *newState = transition(&parentNode->state, i); // Crear un nuevo estado con el movimiento .actual
 
-        if (newState->x != x || newState->y != y) { // Verificar si se hizo un movimiento válido
+        if (newState->x != x || newState->y != y) { // Verificar si se hizo un movimiento válido.
 
-            Node *newNode = (Node*) malloc(sizeof(Node)); // Crear un nuevo nodo
+            Node *newNode = (Node*) malloc(sizeof(Node)); // Crear un nuevo nodo.
 
-            newNode->state = *newState; // Asignar el estado al nuevo nodo
-            newNode->parent = parentNode; // Asignar el nodo padre al nuevo nodo
-            list_pushBack(adjList, newNode); // Agregar el nuevo nodo a la lista de nodos adyacentes
+            newNode->state = *newState; // Asignar el estado al nuevo nodo.
+            newNode->parent = parentNode; // Asignar el nodo padre al nuevo nodo.
+            list_pushBack(adjList, newNode); // Agregar el nuevo nodo a la lista de nodos adyacentes.
             
         } else {
-            free(newState); // Liberar el estado si no se hizo un movimiento válido
+            free(newState); // Liberar el estado si no se hizo un movimiento válido.
         }
     }
     return adjList; 
 }
 
-void dfs(State initialState, int count) { // Función para realizar el recorrido en profundidad
+void dfs(State initialState, int count) { // Función para realizar el recorrido en profundidad.
 
-    Stack* stack = stack_create(stack); // Crear una pila para almacenar los nodos del árbol de búsqueda
-
+    Stack* stack = stack_create(stack); // Crear una pila para almacenar los nodos del árbol de búsqueda.
+    
     printf("\nEstado Original:\n\n"); 
     imprimirEstado(&initialState); // Imprimir el estado inicial
     printf("\n");
