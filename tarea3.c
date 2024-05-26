@@ -28,13 +28,13 @@ void mostrarMenuPrincipal() { // Función para mostrar el menú principal
 
     limpiarPantalla();
     puts("========================================\n");
-    puts("     Choose a search method\n");
+    puts("     Escoge método de búsqueda\n");
     puts("========================================\n");
 
-    puts("1) Deep-First Search");
-    puts("2) Breadth-First Search");
-    puts("3) Greedy Best-First Search");
-    puts("4) Exit\n");
+    puts("1) Búsqueda en Profundidad");
+    puts("2) Buscar en Anchura");
+    puts("3) Buscar Mejor Primero");
+    puts("4) Salir\n");
 
 }
 
@@ -188,7 +188,7 @@ void dfs(State initialState, int count) { // Función para realizar el recorrido
 
     Stack* stack = stack_create(stack); // Crear una pila para almacenar los nodos del árbol de búsqueda
 
-    printf("\nOriginal State:\n\n"); 
+    printf("\nEstado Original:\n\n"); 
     imprimirEstado(&initialState); // Imprimir el estado inicial
     printf("\n");
 
@@ -210,8 +210,8 @@ void dfs(State initialState, int count) { // Función para realizar el recorrido
 
         if (isFinal(&currentNode->state)) { // Verificar si el estado actual es el estado final
 
-            printf("Puzzle solved!\n");
-            printf("Iterations: %d\n\n", count);
+            printf("¡Solución encontrada!\n");
+            printf("Iteraciones: %d\n\n", count);
 
             Node *node = currentNode; // Inicializar un nodo auxiliar
             int steps = currentNode->state.nActions; // Inicializar el número de pasos
@@ -219,10 +219,10 @@ void dfs(State initialState, int count) { // Función para realizar el recorrido
             while (node != NULL) { // Recorrer el árbol de búsqueda hasta el nodo raíz
 
                 if (steps == 0) 
-                    printf("Initial State:\n\n");  // Imprimir el estado inicial
+                    printf("Estado Inicial:\n\n");  // Imprimir el estado inicial
 
                 else
-                    printf("Step %d:\n\n", steps);  // Imprimir el estado actual                
+                    printf("Paso %d:\n\n", steps);  // Imprimir el estado actual                
                 
                 imprimirEstado(&node->state);
                 printf("\n");
@@ -253,7 +253,7 @@ void dfs(State initialState, int count) { // Función para realizar el recorrido
 
     }
 
-    printf("The solution was not found within the limited range.\n"); 
+    printf("La solución no se ha encontrado en el rango limitado (15).\n"); 
     stack_clean(stack); // Limpiar la pila
 }
 
@@ -261,7 +261,7 @@ void bfs(State initialState, int count) { // Función para realizar el recorrido
 
     Queue* queue = queue_create(queue); // Crear una cola para almacenar los nodos del árbol de búsqueda
 
-    printf("Initial State:\n\n");
+    printf("Estado Inicial:\n\n");
     imprimirEstado(&initialState); // Imprimir el estado inicial
     printf("\n");
 
@@ -277,15 +277,15 @@ void bfs(State initialState, int count) { // Función para realizar el recorrido
 
         if (count >= 15000000) { // Verificar si se alcanzó el límite de iteraciones
             
-            printf("Process terminated: Iteration limit reached (15.000.000)\n");
+            printf("Proceso abortado: Límite de iteraciones excedido (15.000.000)\n");
             return;
             
         }
 
         if (isFinal(&currentNode->state)) { // Verificar si el estado actual es el estado final
 
-            printf("Puzzle solved!\n");
-            printf("Iterations: %d\n\n", count);
+            printf("¡Solución encontrada!\n");
+            printf("Iteraciones: %d\n\n", count);
 
             Node *node = currentNode; // Inicializar un nodo auxiliar
             int steps = currentNode->state.nActions; // Inicializar el número de pasos
@@ -293,10 +293,10 @@ void bfs(State initialState, int count) { // Función para realizar el recorrido
             while (node != NULL) { // Recorrer el árbol de búsqueda hasta el nodo raíz
 
                 if (steps == 0) 
-                    printf("Initial State:\n\n");  // Imprimir el estado inicial
+                    printf("Estado Inicial:\n\n");  // Imprimir el estado inicial
 
                 else
-                    printf("Step %d:\n\n", steps); // Imprimir el estado actual             
+                    printf("Paso %d:\n\n", steps); // Imprimir el estado actual             
 
                 imprimirEstado(&node->state); // 
                 printf("\n");
@@ -327,7 +327,7 @@ void bfs(State initialState, int count) { // Función para realizar el recorrido
         
     }
 
-    printf("The solution was not found.\n"); 
+    printf("No se ha encontrado la solución.\n"); 
     queue_clean(queue); // Limpiar la cola
     
 }
@@ -350,7 +350,7 @@ int main() {
     do { // Bucle para mostrar el menú y realizar las operaciones seleccionadas por el usuario
         
         mostrarMenuPrincipal(); // Mostrar el menú principal
-        printf("Choose an option: ");
+        printf("Ingrese su opción: ");
         scanf(" %d", &opcion); // Leer la opción seleccionada por el usuario
     
         switch (opcion) {
