@@ -76,18 +76,6 @@ int isFinal(const State* estado) { // Función para verificar si el estado actua
     return 1;
 }
 
-void copyState(State original, State* new) { // Función para copiar un estado
-
-    for (int i = 0; i < 3; i++)
-        for (int j = 0; j < 3; j++)
-            new->square[i][j] = original.square[i][j];
-
-    new->x = original.x;
-    new->y = original.y;
-    new->nActions = original.nActions;
-    
-}
-
 void move(State* current, int choice) { // Función para realizar un movimiento en el tablero
 
     int x = current->x;
@@ -100,10 +88,10 @@ void move(State* current, int choice) { // Función para realizar un movimiento 
 
             if (isValidMove(x , y - 1)) {
 
-                temp = current->square[x][y - 1];
-                current->square[x][y - 1] = current->square[x][y];
-                current->square[x][y] = temp;
-                current->y = y - 1;
+                temp = current->square[x][y - 1]; // Guardar el valor del espacio vacío
+                current->square[x][y - 1] = current->square[x][y]; // Mover el espacio vacío hacia arriba
+                current->square[x][y] = temp; // Colocar el valor del espacio vacío en su nueva posición
+                current->y = y - 1; // Actualizar la posición y del espacio vacío
 
             }
 
@@ -113,10 +101,10 @@ void move(State* current, int choice) { // Función para realizar un movimiento 
 
             if (isValidMove(x , y + 1)) {
 
-                temp = current->square[x][y + 1];
-                current->square[x][y + 1] = current->square[x][y];
-                current->square[x][y] = temp;
-                current->y = y + 1;
+                temp = current->square[x][y + 1]; // Guardar el valor del espacio vacío
+                current->square[x][y + 1] = current->square[x][y]; // Mover el espacio vacío hacia abajo
+                current->square[x][y] = temp; // Colocar el valor del espacio vacío en su nueva posición
+                current->y = y + 1; // Actualizar la posición y del espacio vacío
 
             }
 
@@ -125,10 +113,10 @@ void move(State* current, int choice) { // Función para realizar un movimiento 
 
             if (isValidMove(x - 1, y)) {
 
-                temp = current->square[x - 1][y];
-                current->square[x - 1][y] = current->square[x][y];
-                current->square[x][y] = temp;
-                current->x = x - 1;
+                temp = current->square[x - 1][y]; // Guardar el valor del espacio vacío
+                current->square[x - 1][y] = current->square[x][y]; // Mover el espacio vacío hacia la izquierda
+                current->square[x][y] = temp; // Colocar el valor del espacio vacío en su nueva posición
+                current->x = x - 1; // Actualizar la posición x del espacio vacío
 
             }
 
@@ -136,10 +124,10 @@ void move(State* current, int choice) { // Función para realizar un movimiento 
         case 4: // Mover espacio vacío hacia la derecha
             if (isValidMove(x + 1, y)) {
 
-                temp = current->square[x + 1][y];
-                current->square[x + 1][y] = current->square[x][y];
-                current->square[x][y] = temp;
-                current->x = x + 1;
+                temp = current->square[x + 1][y]; // Guardar el valor del espacio vacío
+                current->square[x + 1][y] = current->square[x][y]; // Mover el espacio vacío hacia la derecha
+                current->square[x][y] = temp; // Colocar el valor del espacio vacío en su nueva posición
+                current->x = x + 1; // Actualizar la posición x del espacio vacío
 
             }
             break;
@@ -150,7 +138,7 @@ State* transition(State* oldState, int action) { // Función para realizar una t
 
     State *newState = (State*) malloc(sizeof(State)); // Crear un nuevo estado
 
-    copyState(*oldState, newState); // Copiar el estado actual al nuevo estado
+    memcpy(newState, oldState, sizeof(State));
     move(newState, action); // Realizar el movimiento en el nuevo estado
     newState->nActions++; // Incrementar el número de acciones realizadas
 
